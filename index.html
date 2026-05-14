@@ -542,6 +542,7 @@
     .rk-grid { grid-template-columns: 1fr; }
     section { padding: 60px 0; }
     .wrap { padding: 0 20px; }
+    .reveal { opacity: 1 !important; transform: none !important; }
   }
 </style>
 </head>
@@ -1279,7 +1280,7 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) entry.target.classList.add('in');
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
   // Gallery tabs
